@@ -4,6 +4,8 @@ const port = process.env.PORT || 3000;
 
 const TARGET_URLS = {
    'abc.com': 'https://dbmci.one',
+   'mocksite-nine.vercel.app': 'https://marrow.com',
+   'medulla.mocksite-nine.vercel.app': 'https://medulla.app',
    'xyz.com': 'https://medulla.app',
    "face.localhost:3000": 'https:facebook.com',
    'abc.localhost:3000': 'https://medulla.app',
