@@ -3,14 +3,12 @@ const https = require('https');
 const port = process.env.PORT || 3000;
 
 const TARGET_URLS = {
-   'abc.com': 'https://dbmci.one',
    'mocksite-nine.vercel.app': 'https://marrow.com',
-   'medulla.mocksite-nine.vercel.app': 'https://medulla.app',
-   'xyz.com': 'https://medulla.app',
-   "face.localhost:3000": 'https:facebook.com',
+   "face.localhost:3000": 'https://dbmci.one',
    'abc.localhost:3000': 'https://medulla.app',
    'xyz.localhost:3000': 'https://my.spline.design/retroglassmaterial-ab6121e0206b06bdb88de5e37566d0c6/',
-   default: 'https://dbmci.one', // Default URL if no match is found
+   'mine.localhost:3000': 'https://medulla.appa',
+   default: 'https://playful-predict-101321.framer.app/', // Default URL if no match is found
 };
 
 function getTargetUrl(req) {
