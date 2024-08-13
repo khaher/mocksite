@@ -8,7 +8,7 @@ const TARGET_URLS = {
    'abc.localhost:3000': 'https://medulla.app',
    'xyz.localhost:3000': 'https://my.spline.design/retroglassmaterial-ab6121e0206b06bdb88de5e37566d0c6/',
    'mine.localhost:3000': 'https://marrow.com',
-   default: 'https://playful-predict-101321.framer.app/', // Default URL if no match is found
+   default: 'https://spectacular-form-243707.framer.app/', // Default URL if no match is found
 };
 
 function getTargetUrl(req) {
