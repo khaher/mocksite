@@ -37,15 +37,8 @@ const server = http.createServer((req, res) => {
          });
 
          response.on('end', () => {
-            // Modify the HTML to add display:none to the target div
-            const modifiedData = data.replace(
-               /(<div\b[^>]*class\s*=\s*["']?[^"'>]*\b__framer-badge-container\b[^"'>]*["']?[^>]*>)/g,
-               '$1<style>.__framer-badge-container { display: none; }</style>'
-            );
-
-            // Send the modified HTML back
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(modifiedData);
+            res.end(data);
          });
       })
       .on('error', (error) => {
@@ -57,4 +50,3 @@ const server = http.createServer((req, res) => {
 server.listen(port, () => {
    console.log(`Server is running on port ${port}`);
 });
-//Adding comment
