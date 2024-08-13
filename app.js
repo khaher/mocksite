@@ -3,11 +3,11 @@ const https = require('https');
 const port = process.env.PORT || 3000;
 
 const TARGET_URLS = {
-   'mocksite-nine.vercel.app': 'https://dbmci.one',
+   'mocksite-nine.vercel.app': 'https://spectacular-form-243707.framer.app/',
    "face.localhost:3000": 'https://dbmci.one',
    'abc.localhost:3000': 'https://medulla.app',
    'xyz.localhost:3000': 'https://my.spline.design/retroglassmaterial-ab6121e0206b06bdb88de5e37566d0c6/',
-   'mine.localhost:3000': 'https://medulla.appa',
+   'mine.localhost:3000': 'https://marrow.com',
    default: 'https://playful-predict-101321.framer.app/', // Default URL if no match is found
 };
 
