@@ -4,10 +4,7 @@ const port = process.env.PORT || 3000;
 
 const TARGET_URLS = {
    'mocksite-nine.vercel.app': 'https://spectacular-form-243707.framer.app/',
-   "face.localhost:3000": 'https://dbmci.one',
-   'abc.localhost:3000': 'https://medulla.app',
-   'xyz.localhost:3000': 'https://my.spline.design/retroglassmaterial-ab6121e0206b06bdb88de5e37566d0c6/',
-   'mine.localhost:3000': 'https://marrow.com',
+   'abc.localhost:3000': 'https://spectacular-form-243707.framer.app/',
    default: 'https://spectacular-form-243707.framer.app/', // Default URL if no match is found
 };
 
@@ -15,7 +12,6 @@ function getTargetUrl(req) {
    const origin = req.headers.origin || req.headers.host;
    console.log(origin);
    if (!origin) return TARGET_URLS.default;
-
    for (const [domain, url] of Object.entries(TARGET_URLS)) {
       if (origin.includes(domain)) {
          return url;
@@ -31,14 +27,26 @@ const server = http.createServer((req, res) => {
    protocol
       .get(targetUrl, (response) => {
          let data = '';
-
          response.on('data', (chunk) => {
             data += chunk;
          });
-
          response.on('end', () => {
+            // Inject script to hide Framer badge
+            const script = `
+               <script>
+                  document.addEventListener('DOMContentLoaded', function() {
+                     var style = document.createElement('style');
+                     style.textContent = '#__framer-badge-container { display: none !important; }';
+                     document.head.appendChild(style);
+                  });
+               </script>
+            `;
+            
+            // Inject the script at the end of the body
+            const modifiedHtml = data.replace('</body>', script + '</body>');
+
             res.writeHead(200, { 'Content-Type': 'text/html' });
-            res.end(data);
+            res.end(modifiedHtml);
          });
       })
       .on('error', (error) => {
