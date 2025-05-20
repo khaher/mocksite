@@ -3,9 +3,8 @@ const https = require('https');
 const port = process.env.PORT || 3000;
 
 const TARGET_URLS = {
-   'mocksite-nine.vercel.app': 'https://spectacular-form-243707.framer.app/',
-   'abc.localhost:3000': 'https://spectacular-form-243707.framer.app/',
-   default: 'https://spectacular-form-243707.framer.app/', // Default URL if no match is found
+   'mocksite-nine.vercel.app': 'https://glad-shape-304011.framer.app/',
+   default: 'https://glad-shape-304011.framer.app/', // Default URL if no match is found
 };
 
 function getTargetUrl(req) {
