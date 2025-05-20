@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 
 const TARGET_URLS = {
    'mocksite-nine.vercel.app': 'https://glad-shape-304011.framer.app/',
-   default: 'https://glad-shape-304011.framer.app/', // Default URL if no match is found
+   default: 'https://glad-shape-304011.framer.app/', // Default URL if no match found
 };
 
 function getTargetUrl(req) {
